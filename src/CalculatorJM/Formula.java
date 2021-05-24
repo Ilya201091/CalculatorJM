@@ -20,50 +20,56 @@ public class Formula {
                 b = Integer.parseInt(arr[2]);
                 isArabic = true;
             }
-            catch (Exception e){
-                throw new RuntimeException("Неверно");
+            catch (RuntimeException e){
+                System.out.println("Неверный формат");;
             }
 
         }
 
-        if (isArabic || isRoman){
+        try {
+            if (isArabic || isRoman){
 
-            if(arr[1].equals("+")){
-               if(isRoman){
-                   System.out.println(theRoman.romeResult(a + b));
-               }
-               else {
-                   System.out.println(a + b);
-               }
+                if(arr[1].equals("+")){
+                    if(isRoman){
+                        System.out.println(theRoman.romeResult(a + b));
+                    }
+                    else {
+                        System.out.println(a + b);
+                    }
 
-            }
-            else if (arr[1].equals("-")){
-                if(isRoman){
-                    System.out.println(theRoman.romeResult(a - b));
+                }
+                else if (arr[1].equals("-")){
+                    if(isRoman){
+                        System.out.println(theRoman.romeResult(a - b));
+                    }
+                    else {
+                        System.out.println(a - b);
+                    }
+                }
+                else if(arr[1].equals("*")){
+                    if(isRoman){
+                        System.out.println(theRoman.romeResult(a * b));
+                    }else {
+                        System.out.println(a * b);
+                    }
+
+                }
+                else if(arr[1].equals("/")){
+                    if(isRoman){
+                        System.out.println(theRoman.romeResult(a / b));
+                    }
+                    else {
+                        System.out.println(a / b);
+                    }
                 }
                 else {
-                    System.out.println(a - b);
+                    System.out.println("Введен неизвестный символ");
                 }
-            }
-            else if(arr[1].equals("*")){
-                if(isRoman){
-                    System.out.println(theRoman.romeResult(a * b));
-                }else {
-                    System.out.println(a * b);
-                }
-
-            }
-            else if(arr[1].equals("/")){
-                if(isRoman){
-                    System.out.println(theRoman.romeResult(a / b));
-                }
-                else {
-                    System.out.println(a / b);
-                }
-            }
-            else {
-                System.out.println("Введен неизвестный символ");
             }
         }
+        catch (Exception e){
+            System.out.println("Ошибка рассчета");
+        }
+
     }
 }

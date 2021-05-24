@@ -26,7 +26,6 @@ public class Formula {
 
         }
 
-        try {
             if (isArabic || isRoman){
 
                 if(arr[1].equals("+")){
@@ -66,10 +65,5 @@ public class Formula {
                     System.out.println("Введен неизвестный символ");
                 }
             }
-        }
-        catch (Exception e){
-            System.out.println("Ошибка рассчета");
-        }
-
     }
 }

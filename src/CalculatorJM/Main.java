@@ -11,6 +11,5 @@ public class Main {
         Formula formula1 = new Formula(formula);
         LimitCalculator limitCalculator = new LimitCalculator(formula);
     }
-10
 
 }
